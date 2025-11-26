@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="50" viewBox="0 0 220 50" role="img" aria-labelledby="logoTitle">
+  <title id="logoTitle">Shiv Shambho Logo</title>
+  <rect width="220" height="50" rx="6" fill="#0d6efd" />
+  <g transform="translate(12,32)">
+    <text x="0" y="0" font-family="Poppins, Arial, sans-serif" font-size="18" fill="#fff" font-weight="700">Shiv</text>
+    <text x="56" y="0" font-family="Poppins, Arial, sans-serif" font-size="18" fill="#20c997" font-weight="700">Shambho</text>
+  </g>
+</svg>
