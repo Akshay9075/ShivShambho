@@ -1,0 +1,190 @@
+/* Brand logo and text helpers */
+.brand-logo {
+  height: 36px;
+  display: inline-block;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+.brand-text {
+  display: inline-block;
+  color: #F57622;
+}
+
+/* Stack logo above text on small screens */
+@media (max-width: 575.98px) {
+  .navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .brand-logo {
+    margin-right: 0;
+    margin-bottom: 4px;
+  }
+}
+/* Floating WhatsApp and Call buttons */
+.floating-actions {
+  /* position buttons at bottom-left on all pages */
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  right: auto;
+  top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  z-index: 11000;
+}
+.floating-actions .floating-btn {
+  /* slightly smaller pill buttons */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 24px;
+  min-height: 36px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  color: #fff;
+  text-decoration: none;
+  transition: transform .12s ease, box-shadow .12s ease;
+  white-space: nowrap;
+}
+.floating-actions .floating-btn:active,
+.floating-actions .floating-btn:focus {
+  transform: translateY(1px);
+  outline: none;
+}
+.floating-actions .whatsapp-btn {
+  background: #25D366; /* WhatsApp green */
+}
+.floating-actions .call-btn {
+  background: #ff2d2d; /* red call button (closer to image) */
+}
+.floating-actions .floating-btn svg {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
+/* Labels for the buttons (inserted via CSS so HTML doesn't need editing) */
+.floating-actions .whatsapp-btn::after {
+  content: "Chat";
+  margin-left: 6px;
+  font-weight: 700;
+  font-size: 12px;
+}
+.floating-actions .call-btn::after {
+  content: "Call";
+  margin-left: 6px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* Make sure labels shrink slightly on very small screens */
+@media (max-width: 420px) {
+  .floating-actions .whatsapp-btn::after,
+  .floating-actions .call-btn::after { font-size: 11px; }
+  .floating-actions { left: 10px; bottom: 16px; }
+}
+/* Slightly larger on big screens */
+@media (min-width: 1200px) {
+  /* keep top-left but give slightly larger spacing on wide screens */
+  .floating-actions { left: 28px; bottom: 28px; }
+  .floating-actions .floating-btn { padding: 10px 16px; }
+  .floating-actions .floating-btn svg { width: 22px; height: 22px; }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .floating-actions .floating-btn { transition: none; }
+}
+
+/* Topbar contact (booking number + email) */
+.topbar {
+  background: #f8f9fa;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  font-size: 14px;
+}
+.topbar .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 6px 15px;
+}
+.topbar a {
+  color: #333;
+  text-decoration: none;
+  margin-left: 18px;
+  display: inline-flex;
+  align-items: center;
+}
+.topbar a .icon-phone,
+.topbar a .icon-envelope-o {
+  margin-right: 8px;
+  color: #007bff;
+}
+.topbar a:hover { text-decoration: underline; }
+
+@media (max-width: 767px) {
+  /* Show topbar on mobile as well. Adjust spacing for small screens. */
+  .topbar { display: block; }
+  .topbar .container { justify-content: space-between; padding: 8px 12px; }
+  .topbar a { margin-left: 12px; }
+  /* Improve alignment and wrapping of inner flex container on small screens */
+  .topbar .container > .d-flex {
+    width: 100%;
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .topbar .container > .d-flex a {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 8px;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  /* allow icons to sit neatly before text */
+  .topbar .container > .d-flex a .icon-phone,
+  .topbar .container > .d-flex a .icon-envelope-o {
+    margin-right: 6px;
+    font-size: 16px;
+  }
+
+  /* Navbar brand: stack logo above text on small screens */
+  .navbar-brand {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-align: center;
+    white-space: normal;
+  }
+  .navbar-brand img.brand-logo {
+    margin-right: 0 !important;
+    margin-bottom: 4px;
+    vertical-align: middle;
+    height: 44px;
+    display: inline-block;
+  }
+  .brand-text { white-space: nowrap; display: inline-block; font-size: 16px; }
+}
+@media (max-width: 400px) {
+  .brand-text { font-size: 14px; }
+}
+
+/* Force brand orange across site for brand text and footer logo */
+.brand-text,
+.logo,
+.logo span,
+.ftco-footer .logo,
+.ftco-footer .logo span,
+.navbar-brand .brand-text,
+.ftco-navbar-light .navbar-brand span {
+  color: #F57622 !important;
+}
